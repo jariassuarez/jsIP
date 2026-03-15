@@ -144,7 +144,7 @@ if __name__ == '__main__':
     # Send handshakes so receiver can create virtual devices before events arrive
     for s in senders:
         s.send_handshake()
-        print(f"[handshake] device_id={s.device_id} → {s.device} ({s.name})")
+        print(f"[handshake] device_id={s.device_id} -> {s.device} ({s.name})")
 
     for s in senders:
         s.start()

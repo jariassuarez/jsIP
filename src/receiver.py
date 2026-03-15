@@ -2,9 +2,9 @@ import struct
 import threading
 import socket
 
-from mappings import DS4_BUTTONS, DS4_AXES, DS4_BUTTON_CODES, DS4_AXIS_CODES
-from virtual import VirtualDS4
-from server import (
+from .mappings import DS4_BUTTONS, DS4_AXES, DS4_BUTTON_CODES, DS4_AXIS_CODES
+from .virtual import VirtualDS4
+from .server import (
     PKT_HANDSHAKE, PKT_EVENT, PKT_REQUEST,
     HANDSHAKE_FORMAT, HANDSHAKE_SIZE,
     EVENT_FORMAT, EVENT_SIZE,

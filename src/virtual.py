@@ -3,7 +3,7 @@ import struct
 import fcntl
 import time
 
-from mappings import DS4_BUTTON_CODES, DS4_AXIS_CODES
+from .mappings import DS4_BUTTON_CODES, DS4_AXIS_CODES
 
 # Event types
 EV_KEY = 0x01
