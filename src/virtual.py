@@ -26,8 +26,9 @@ UI_DEV_DESTROY = 0x5502
 
 
 class VirtualDS4:
-    def __init__(self, device='/dev/uinput'):
+    def __init__(self, device='/dev/uinput', name='Virtual DS4'):
         self.device = device
+        self.name = name
         self.fd = None
 
     def _ioctl(self, request, arg=0):
@@ -63,7 +64,7 @@ class VirtualDS4:
 
         dev = struct.pack(
             UINPUT_USER_DEV_FORMAT,
-            b'Virtual DS4',
+            self.name.encode()[:79],
             0x03, 0x054C, 0x05C4, 0x0100,  # BUS_USB, Sony vendor, DS4 product, version
             0,                              # ff_effects_max
             *absmax, *absmin, *absfuzz, *absflat
